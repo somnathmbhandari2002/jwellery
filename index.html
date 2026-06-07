@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noirva Jewels | Fine Jewellery Showcase</title>
+  <meta name="description" content="A premium responsive jewellery showcase with diamond, emerald, ruby, bridal and bespoke collections, smooth animations, and appointment booking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loader" aria-hidden="true"><span></span></div>
+  <span id="top" class="top-anchor" aria-hidden="true"></span>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="Noirva Jewels home">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span>
+        <strong>Noirva Jewels</strong>
+        <small>Fine Jewellery Studio</small>
+      </span>
+    </a>
+
+    <nav class="nav-links" data-nav aria-label="Primary navigation">
+      <a href="#collections">Collections</a>
+      <a href="#signature">Signature</a>
+      <a href="#craft">Craft</a>
+      <a href="#bespoke">Bespoke</a>
+      <a href="#visit">Visit</a>
+    </nav>
+
+    <a class="header-cta" href="#appointment">Book Viewing</a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <button class="nav-backdrop" type="button" data-nav-backdrop aria-label="Close menu" tabindex="-1"></button>
+
+  <main>
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/jewelry-hero.png" alt="">
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">Private fine jewellery atelier</p>
+        <h1>Midnight jewellery that holds the room.</h1>
+        <p class="hero-copy">A cinematic vault for bridal sets, emerald drops, diamond solitaires, ruby rings, and bespoke heirlooms crafted with certified stones and 916 gold.</p>
+        <div class="hero-gems" aria-label="Featured jewellery materials">
+          <span>Diamond</span>
+          <span>Emerald</span>
+          <span>Ruby</span>
+          <span>916 Gold</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#collections">Explore Collection</a>
+          <a class="btn btn-soft" href="#appointment">Private Viewing</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="vault-strip" aria-label="Jewellery highlights">
+      <article class="vault-card reveal">
+        <span>01</span>
+        <strong>Curated brilliance</strong>
+        <p>Every piece is staged by gemstone tone, metal warmth, and how it catches real light.</p>
+      </article>
+      <article class="vault-card reveal">
+        <span>02</span>
+        <strong>Bridal presence</strong>
+        <p>Statement sets, layered necklaces, bangles, and occasion styling in one calm flow.</p>
+      </article>
+      <article class="vault-card reveal">
+        <span>03</span>
+        <strong>Certified confidence</strong>
+        <p>Transparent purity, stone certificates, exchange guidance, and service support.</p>
+      </article>
+    </section>
+
+    <section class="vault-feature reveal" aria-label="Featured private vault arrival">
+      <div class="vault-feature-copy">
+        <div class="showcase-top">
+          <div class="live-row"><span></span><strong>Private lounge open today</strong></div>
+          <p>New vault arrival</p>
+        </div>
+        <p class="eyebrow">Midnight Radiance</p>
+        <h2>Emerald fire, diamond frost, one private viewing.</h2>
+        <p>Emerald diamond collar with matching drop earrings, staged on a quiet atelier surface away from the hero jewellery image so customers can inspect the offer clearly.</p>
+        <div class="hero-stats">
+          <span><strong>916</strong><small>Gold purity</small></span>
+          <span><strong>GIA</strong><small>Certified stones</small></span>
+          <span><strong>48h</strong><small>Bespoke sketch</small></span>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/919876543210?text=Hello%20Noirva%20Jewels%2C%20I%20want%20to%20book%20a%20private%20jewellery%20viewing." target="_blank" rel="noopener">Reserve on WhatsApp</a>
+      </div>
+      <div class="gem-orbit" aria-hidden="true">
+        <span class="orbit-ring ring-one"></span>
+        <span class="orbit-ring ring-two"></span>
+        <span class="orbit-ring ring-three"></span>
+        <span class="gem-core"></span>
+        <span class="gem-chip chip-one"></span>
+        <span class="gem-chip chip-two"></span>
+        <span class="gem-chip chip-three"></span>
+        <span class="gem-chip chip-four"></span>
+        <span class="shine-ray"></span>
+      </div>
+    </section>
+
+    <section class="gem-marquee" aria-hidden="true">
+      <div>
+        <span>Diamond solitaires</span>
+        <span>Emerald drops</span>
+        <span>Ruby cocktail rings</span>
+        <span>Bridal chokers</span>
+        <span>916 gold bangles</span>
+        <span>Bespoke heirlooms</span>
+      </div>
+    </section>
+
+    <section class="lookbook" aria-label="Jewellery lookbook">
+      <figure class="look-tile reveal motion-left">
+        <img src="assets/jewel-diamond.webp" alt="Diamond ring close up on dark premium surface">
+        <figcaption><span>Diamond</span><strong>Ice line solitaire</strong></figcaption>
+      </figure>
+      <figure class="look-tile reveal motion-zoom featured">
+        <img src="assets/lookbook-wide.webp" alt="Luxury gold necklace and earrings styled for a premium jewellery display">
+        <figcaption><span>Bridal</span><strong>Temple glow suite</strong></figcaption>
+      </figure>
+      <figure class="look-tile reveal motion-right">
+        <img src="assets/jewel-gold.webp" alt="Elegant gold jewellery with gemstone details">
+        <figcaption><span>Gold</span><strong>Everyday heirloom</strong></figcaption>
+      </figure>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="section-head reveal">
+        <p class="eyebrow">The vault</p>
+        <h2>Collections shaped for every kind of glow.</h2>
+        <p>Customers can scan by mood: bridal, diamond, gemstone, gold, and daily luxury. Each piece has a clear starting price in Indian rupees.</p>
+      </div>
+
+      <div class="collection-tabs reveal" aria-label="Collection filters">
+        <button class="active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="bridal" aria-pressed="false">Bridal</button>
+        <button type="button" data-filter="diamond" aria-pressed="false">Diamond</button>
+        <button type="button" data-filter="gemstone" aria-pressed="false">Gemstone</button>
+        <button type="button" data-filter="gold" aria-pressed="false">Gold</button>
+      </div>
+
+      <div class="jewel-grid">
+        <article class="jewel-card reveal" data-category="diamond">
+          <figure><img src="assets/jewel-diamond.webp" alt="Diamond solitaire ring"></figure>
+          <div class="jewel-meta"><span>Diamond</span><em>GIA</em></div>
+          <h3>Aurora Solitaire Ring</h3>
+          <p>18K white gold, certified diamond, hidden halo, mirror-polished basket.</p>
+          <div class="jewel-footer"><strong>From Rs. 89,000</strong><small>18K white gold</small></div>
+        </article>
+        <article class="jewel-card tall reveal" data-category="bridal">
+          <figure><img src="assets/jewel-bridal.webp" alt="Bridal necklace jewellery set"></figure>
+          <div class="jewel-meta"><span>Bridal</span><em>916</em></div>
+          <h3>Rani Noor Bridal Suite</h3>
+          <p>Layered necklace, earrings, tikka, and bangles finished for reception light.</p>
+          <div class="jewel-footer"><strong>From Rs. 3,40,000</strong><small>Full set styling</small></div>
+        </article>
+        <article class="jewel-card reveal" data-category="gemstone">
+          <figure><img src="assets/jewel-emerald.webp" alt="Emerald gemstone jewellery close up"></figure>
+          <div class="jewel-meta"><span>Emerald</span><em>Pair</em></div>
+          <h3>Zariya Emerald Drops</h3>
+          <p>Colombian emerald tone, diamond frame, delicate movement, evening-ready shine.</p>
+          <div class="jewel-footer"><strong>From Rs. 1,25,000</strong><small>Diamond frame</small></div>
+        </article>
+        <article class="jewel-card reveal" data-category="gold">
+          <figure><img src="assets/jewel-gold.webp" alt="Gold jewellery chain and rings"></figure>
+          <div class="jewel-meta"><span>Gold</span><em>Daily</em></div>
+          <h3>Sona Thread Bracelet</h3>
+          <p>916 gold, sculpted links, low-profile clasp, light enough for daily wear.</p>
+          <div class="jewel-footer"><strong>From Rs. 42,000</strong><small>916 hallmark</small></div>
+        </article>
+        <article class="jewel-card wide reveal" data-category="gemstone">
+          <figure><img src="assets/jewel-ruby.webp" alt="Ruby ring with luxury red gemstone"></figure>
+          <div class="jewel-meta"><span>Ruby</span><em>One-of-one</em></div>
+          <h3>Velvet Ruby Cocktail Ring</h3>
+          <p>Deep red ruby centre, diamond shoulders, and a sculptural gold profile made for celebration nights.</p>
+          <div class="jewel-footer"><strong>From Rs. 1,75,000</strong><small>Custom sizing</small></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="signature-section" id="signature">
+      <div class="signature-copy reveal">
+        <p class="eyebrow">Signature reveal</p>
+        <h2>A necklace display that feels alive on scroll.</h2>
+        <p>Dark velvet, warm gold, and slow-moving highlights create a jewellery-store atmosphere that feels intimate even on a phone.</p>
+      </div>
+      <div class="necklace-stage reveal" aria-label="Animated necklace showcase">
+        <span class="chain-dot dot-one"></span>
+        <span class="chain-dot dot-two"></span>
+        <span class="chain-dot dot-three"></span>
+        <span class="chain-dot dot-four"></span>
+        <span class="pendant"></span>
+        <span class="light-sweep"></span>
+      </div>
+    </section>
+
+    <section class="craft-section" id="craft">
+      <div class="section-head reveal">
+        <p class="eyebrow">Craft language</p>
+        <h2>Made for inspection, not just attention.</h2>
+      </div>
+      <div class="craft-grid">
+        <article class="craft-card reveal"><span>01</span><strong>Stone selection</strong><p>Cut, color, clarity, and face-up sparkle are matched to the design mood.</p></article>
+        <article class="craft-card reveal"><span>02</span><strong>Metalwork</strong><p>Gold weight, clasp comfort, prong security, and finishing are reviewed before delivery.</p></article>
+        <article class="craft-card reveal"><span>03</span><strong>Styling lounge</strong><p>Customers compare sets with saree, lehenga, gown, and daily wear styling guidance.</p></article>
+        <article class="craft-card reveal"><span>04</span><strong>Aftercare</strong><p>Cleaning, resizing guidance, exchange support, and safe storage recommendations.</p></article>
+      </div>
+    </section>
+
+    <section class="bespoke-section" id="bespoke">
+      <div class="bespoke-copy reveal">
+        <p class="eyebrow">Bespoke atelier</p>
+        <h2>Turn a memory into a piece people ask about.</h2>
+        <p>Bring an old family jewel, a wedding mood board, or a gemstone you love. We shape it into a modern heirloom with sketches, stone options, and transparent estimates.</p>
+        <a class="phone-pill" href="tel:+919876543210">Call +91 98765 43210</a>
+      </div>
+      <form class="appointment-form reveal" id="appointment">
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+        </label>
+        <label>
+          Phone
+          <input type="tel" name="phone" placeholder="+91 98765 43210" autocomplete="tel" inputmode="tel" pattern="[0-9+ ]{10,16}" required>
+        </label>
+        <label>
+          Interest
+          <select name="interest" required>
+            <option value="">Choose interest</option>
+            <option>Bridal jewellery</option>
+            <option>Diamond ring</option>
+            <option>Gold jewellery</option>
+            <option>Gemstone jewellery</option>
+            <option>Bespoke redesign</option>
+          </select>
+        </label>
+        <div class="form-row">
+          <label>
+            Viewing date
+            <input type="date" name="date" id="viewingDate" required>
+          </label>
+          <label>
+            Budget
+            <select name="budget" required>
+              <option value="">Select budget</option>
+              <option>Rs. 25,000 - Rs. 75,000</option>
+              <option>Rs. 75,000 - Rs. 1,50,000</option>
+              <option>Rs. 1,50,000 - Rs. 4,00,000</option>
+              <option>Rs. 4,00,000+</option>
+            </select>
+          </label>
+        </div>
+        <label class="full">
+          Notes
+          <textarea name="notes" rows="4" placeholder="Occasion, metal preference, gemstone, size, or custom idea"></textarea>
+        </label>
+        <button class="btn btn-primary full" type="submit">Prepare WhatsApp Viewing</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <a class="whatsapp-draft" href="#" target="_blank" rel="noopener" hidden>Open WhatsApp viewing draft</a>
+      </form>
+    </section>
+
+    <section class="visit-section" id="visit">
+      <div class="visit-card reveal">
+        <p class="eyebrow">Visit the studio</p>
+        <h2>Noirva Jewels, Indiranagar</h2>
+        <p>Open daily, 10:30 AM to 8:30 PM. Private bridal and high-value gemstone viewings are recommended by appointment.</p>
+        <div class="visit-actions">
+          <a class="btn btn-primary" href="tel:+919876543210">Call Studio</a>
+          <a class="btn btn-soft" href="https://maps.google.com/?q=Indiranagar+Bengaluru+Jewellery+Store" target="_blank" rel="noopener">Open Map</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="mobile-actions" aria-label="Quick jewellery actions">
+    <a href="tel:+919876543210"><span>Private viewing</span><strong>Call now</strong></a>
+    <a href="#appointment"><span>Bespoke jewel</span><strong>Book</strong></a>
+  </div>
+
+  <footer class="site-footer">
+    <p>Noirva Jewels. Fine jewellery, bridal sets, gemstones, and bespoke heirlooms.</p>
+    <a href="#top">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
