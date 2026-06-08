@@ -43,8 +43,22 @@
 
   <main>
     <section class="hero">
-      <div class="hero-media" aria-hidden="true">
-        <img src="assets/jewelry-hero.png" alt="">
+      <div class="hero-media" data-hero-slider aria-hidden="true">
+        <figure class="hero-slide active">
+          <img src="assets/jewelry-hero.png" alt="">
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/vault-emerald-set-cutout.webp" alt="">
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/lookbook-wide.webp" alt="">
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/jewel-ruby.webp" alt="">
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/jewel-diamond.webp" alt="">
+        </figure>
       </div>
       <div class="hero-shade" aria-hidden="true"></div>
 
@@ -61,6 +75,16 @@
         <div class="hero-actions">
           <a class="btn btn-primary" href="#collections">Explore Collection</a>
           <a class="btn btn-soft" href="#appointment">Private Viewing</a>
+        </div>
+        <div class="hero-carousel" aria-label="Featured jewellery slideshow">
+          <span data-hero-count>01 / 05</span>
+          <div class="hero-dots">
+            <button class="active" type="button" data-hero-dot="0" aria-label="Show diamond collar slide" aria-pressed="true"></button>
+            <button type="button" data-hero-dot="1" aria-label="Show emerald vault set slide" aria-pressed="false"></button>
+            <button type="button" data-hero-dot="2" aria-label="Show bridal suite slide" aria-pressed="false"></button>
+            <button type="button" data-hero-dot="3" aria-label="Show ruby ring slide" aria-pressed="false"></button>
+            <button type="button" data-hero-dot="4" aria-label="Show diamond solitaire slide" aria-pressed="false"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -99,17 +123,9 @@
         </div>
         <a class="btn btn-primary" href="https://wa.me/919876543210?text=Hello%20Noirva%20Jewels%2C%20I%20want%20to%20book%20a%20private%20jewellery%20viewing." target="_blank" rel="noopener">Reserve on WhatsApp</a>
       </div>
-      <div class="gem-orbit" aria-hidden="true">
-        <span class="orbit-ring ring-one"></span>
-        <span class="orbit-ring ring-two"></span>
-        <span class="orbit-ring ring-three"></span>
-        <span class="gem-core"></span>
-        <span class="gem-chip chip-one"></span>
-        <span class="gem-chip chip-two"></span>
-        <span class="gem-chip chip-three"></span>
-        <span class="gem-chip chip-four"></span>
-        <span class="shine-ray"></span>
-      </div>
+      <figure class="vault-jewel-stage reveal">
+        <img src="assets/vault-emerald-set-cutout.webp" alt="AI generated realistic emerald diamond collar necklace with matching drop earrings">
+      </figure>
     </section>
 
     <section class="gem-marquee" aria-hidden="true">
@@ -198,14 +214,9 @@
         <h2>A necklace display that feels alive on scroll.</h2>
         <p>Dark velvet, warm gold, and slow-moving highlights create a jewellery-store atmosphere that feels intimate even on a phone.</p>
       </div>
-      <div class="necklace-stage reveal" aria-label="Animated necklace showcase">
-        <span class="chain-dot dot-one"></span>
-        <span class="chain-dot dot-two"></span>
-        <span class="chain-dot dot-three"></span>
-        <span class="chain-dot dot-four"></span>
-        <span class="pendant"></span>
-        <span class="light-sweep"></span>
-      </div>
+      <figure class="necklace-stage reveal" aria-label="AI generated 3D necklace showcase">
+        <img src="assets/necklace-3d-cutout.png" alt="AI generated realistic 3D emerald and diamond necklace cutout">
+      </figure>
     </section>
 
     <section class="craft-section" id="craft">

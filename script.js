@@ -12,6 +12,11 @@ const viewingDate = document.querySelector("#viewingDate");
 const formStatus = document.querySelector(".form-status");
 const whatsappDraft = document.querySelector(".whatsapp-draft");
 const marqueeTrack = document.querySelector(".gem-marquee div");
+const heroSlider = document.querySelector("[data-hero-slider]");
+const heroSlides = document.querySelectorAll(".hero-slide");
+const heroDots = document.querySelectorAll("[data-hero-dot]");
+const heroCount = document.querySelector("[data-hero-count]");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 document.querySelectorAll("img").forEach((image) => {
   image.addEventListener("error", () => {
@@ -24,6 +29,66 @@ if (marqueeTrack && !marqueeTrack.dataset.cloned) {
   marqueeTrack.innerHTML += marqueeTrack.innerHTML;
   marqueeTrack.dataset.cloned = "true";
 }
+
+let heroSlideIndex = 0;
+let heroSlideTimer;
+
+function setHeroSlide(index) {
+  if (!heroSlides.length) {
+    return;
+  }
+
+  heroSlideIndex = (index + heroSlides.length) % heroSlides.length;
+
+  heroSlides.forEach((slide, slideIndex) => {
+    slide.classList.toggle("active", slideIndex === heroSlideIndex);
+  });
+
+  heroDots.forEach((dot, dotIndex) => {
+    const isActive = dotIndex === heroSlideIndex;
+    dot.classList.toggle("active", isActive);
+    dot.setAttribute("aria-pressed", String(isActive));
+  });
+
+  if (heroCount) {
+    const current = String(heroSlideIndex + 1).padStart(2, "0");
+    const total = String(heroSlides.length).padStart(2, "0");
+    heroCount.textContent = `${current} / ${total}`;
+  }
+}
+
+function stopHeroSlider() {
+  window.clearInterval(heroSlideTimer);
+}
+
+function startHeroSlider() {
+  stopHeroSlider();
+
+  if (reduceMotion.matches || heroSlides.length < 2) {
+    return;
+  }
+
+  heroSlideTimer = window.setInterval(() => {
+    setHeroSlide(heroSlideIndex + 1);
+  }, 4600);
+}
+
+setHeroSlide(0);
+startHeroSlider();
+
+heroDots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    setHeroSlide(Number(dot.dataset.heroDot || 0));
+    startHeroSlider();
+  });
+});
+
+heroSlider?.addEventListener("mouseenter", stopHeroSlider);
+heroSlider?.addEventListener("mouseleave", startHeroSlider);
+heroSlider?.addEventListener("focusin", stopHeroSlider);
+heroSlider?.addEventListener("focusout", startHeroSlider);
+
+reduceMotion.addEventListener?.("change", startHeroSlider);
 
 window.addEventListener("load", () => {
   window.setTimeout(() => {

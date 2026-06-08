@@ -342,7 +342,36 @@ body.nav-open .nav-backdrop {
   inset: 0;
 }
 
-.hero-media img {
+.hero-media {
+  isolation: isolate;
+}
+
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    radial-gradient(circle at 72% 40%, rgba(214, 168, 80, 0.08), transparent 18rem),
+    linear-gradient(180deg, transparent 52%, rgba(8, 7, 6, 0.2));
+  pointer-events: none;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.015);
+  transition: opacity 1.15s ease, transform 1.5s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.hero-slide img {
   height: 100%;
   object-fit: cover;
   object-position: 62% center;
@@ -350,7 +379,36 @@ body.nav-open .nav-backdrop {
   animation: heroDrift 20s ease-in-out infinite alternate;
 }
 
+.hero-slide:nth-child(2) {
+  background:
+    radial-gradient(circle at 68% 48%, rgba(214, 168, 80, 0.34), transparent 22rem),
+    radial-gradient(circle at 72% 62%, rgba(12, 140, 101, 0.24), transparent 20rem),
+    linear-gradient(135deg, #11100d, #2b071a 72%, #080706);
+}
+
+.hero-slide:nth-child(2) img {
+  object-fit: contain;
+  object-position: 72% center;
+  padding: clamp(120px, 10vw, 160px) 4vw 64px 42vw;
+  filter:
+    drop-shadow(0 32px 46px rgba(0, 0, 0, 0.58))
+    drop-shadow(0 0 30px rgba(214, 168, 80, 0.24));
+}
+
+.hero-slide:nth-child(3) img {
+  object-position: 74% center;
+}
+
+.hero-slide:nth-child(4) img {
+  object-position: 76% center;
+}
+
+.hero-slide:nth-child(5) img {
+  object-position: 72% center;
+}
+
 .hero-shade {
+  z-index: 1;
   background:
     radial-gradient(circle at 72% 45%, rgba(255, 241, 200, 0.12), transparent 17rem),
     radial-gradient(circle at 48% 78%, rgba(12, 140, 101, 0.22), transparent 20rem),
@@ -455,6 +513,62 @@ h3 {
   display: grid;
   gap: 10px;
   margin-top: 24px;
+}
+
+.hero-carousel {
+  width: fit-content;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  padding: 8px 10px 8px 14px;
+  border: 1px solid rgba(255, 241, 200, 0.16);
+  border-radius: 999px;
+  background: rgba(8, 7, 6, 0.48);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(14px);
+}
+
+.hero-carousel span {
+  color: var(--champagne);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-dots button {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero-dots button::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 241, 200, 0.48);
+  box-shadow: 0 0 0 1px rgba(255, 241, 200, 0.14);
+  transition: width 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-dots button.active::before {
+  width: 22px;
+  background: linear-gradient(90deg, var(--gold), var(--champagne));
+  box-shadow: 0 0 18px rgba(214, 168, 80, 0.38);
 }
 
 .btn {
@@ -745,7 +859,7 @@ h3 {
 }
 
 .vault-feature-copy,
-.vault-feature .gem-orbit {
+.vault-feature .vault-jewel-stage {
   position: relative;
   z-index: 1;
 }
@@ -777,6 +891,44 @@ h3 {
 
 .vault-feature .btn {
   width: min(360px, 100%);
+}
+
+.vault-jewel-stage {
+  min-height: 320px;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 241, 200, 0.12);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 58%, rgba(214, 168, 80, 0.24), transparent 18rem),
+    radial-gradient(circle at 44% 70%, rgba(12, 140, 101, 0.2), transparent 15rem),
+    linear-gradient(135deg, rgba(255, 249, 237, 0.08), rgba(255, 249, 237, 0.02));
+  box-shadow:
+    inset 0 0 80px rgba(0, 0, 0, 0.24),
+    0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+.vault-jewel-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(112deg, transparent 34%, rgba(255, 255, 255, 0.13), transparent 54%);
+  opacity: 0.72;
+  transform: translateX(18%);
+  pointer-events: none;
+}
+
+.vault-jewel-stage img {
+  width: min(94%, 680px);
+  max-height: 300px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter:
+    drop-shadow(0 24px 32px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 22px rgba(214, 168, 80, 0.22));
 }
 
 .vault-card,
@@ -1134,80 +1286,55 @@ h3 {
   border: 1px solid rgba(255, 241, 200, 0.16);
   border-radius: var(--radius);
   background:
-    conic-gradient(from 120deg, transparent, rgba(214, 168, 80, 0.08), transparent 34%),
-    radial-gradient(circle at center, rgba(214, 168, 80, 0.16), transparent 16rem),
-    radial-gradient(circle at 50% 82%, rgba(12, 140, 101, 0.16), transparent 14rem),
+    radial-gradient(circle at 70% 28%, rgba(214, 168, 80, 0.18), transparent 18rem),
+    radial-gradient(circle at 42% 82%, rgba(12, 140, 101, 0.16), transparent 16rem),
     rgba(255, 249, 237, 0.04);
-  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.32);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.32), 0 30px 90px rgba(0, 0, 0, 0.32);
 }
 
 .necklace-stage::before {
   content: "";
-  width: 260px;
-  height: 260px;
-  border: 3px double rgba(214, 168, 80, 0.82);
-  border-top-color: transparent;
-  border-left-color: transparent;
-  border-radius: 50%;
-  transform: rotate(45deg);
-  filter: drop-shadow(0 0 20px rgba(214, 168, 80, 0.28));
-  animation: necklaceFloat 4.5s ease-in-out infinite;
-}
-
-.chain-dot {
   position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--champagne);
-  box-shadow: 0 0 22px rgba(214, 168, 80, 0.52);
+  inset: 12px;
+  z-index: 3;
+  border: 1px solid rgba(255, 241, 200, 0.18);
+  border-radius: 6px;
+  pointer-events: none;
 }
 
-.chain-dot::after {
+.necklace-stage::after {
   content: "";
   position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  background: var(--gold);
-}
-
-.dot-one { left: 27%; top: 34%; }
-.dot-two { right: 27%; top: 34%; }
-.dot-three { left: 37%; top: 57%; }
-.dot-four { right: 37%; top: 57%; }
-
-.pendant {
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  width: 76px;
-  height: 96px;
-  border-radius: 50% 50% 44% 44%;
+  inset: -20%;
+  z-index: 1;
   background:
-    radial-gradient(circle at 38% 28%, rgba(255, 255, 255, 0.86), transparent 20%),
-    linear-gradient(145deg, #0c8c65, #0a3f35 70%);
-  box-shadow:
-    0 0 0 10px rgba(214, 168, 80, 0.78),
-    0 20px 60px rgba(12, 140, 101, 0.36);
-  transform: translateX(-50%);
-  animation: pendantGlow 3.6s ease-in-out infinite;
+    radial-gradient(ellipse at 50% 72%, rgba(0, 0, 0, 0.34), transparent 20rem),
+    linear-gradient(108deg, transparent 39%, rgba(255, 249, 237, 0.12), transparent 53%);
+  transform: translateX(-70%);
+  animation: imageSweep 6s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.pendant::before {
-  content: "";
-  position: absolute;
-  inset: 16px 20px 24px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
-  clip-path: polygon(50% 0, 100% 48%, 50% 100%, 0 48%);
+.necklace-stage img {
+  width: min(98%, 820px);
+  height: auto;
+  max-height: 88%;
+  position: relative;
+  z-index: 2;
+  object-fit: contain;
+  transform-origin: 50% 48%;
+  filter:
+    drop-shadow(0 24px 34px rgba(0, 0, 0, 0.44))
+    drop-shadow(0 0 26px rgba(214, 168, 80, 0.18));
+  transition: filter 0.75s ease;
 }
 
-.light-sweep {
-  position: absolute;
-  inset: -40%;
-  background: linear-gradient(100deg, transparent 42%, rgba(255, 249, 237, 0.16), transparent 58%);
-  transform: translateX(-48%) rotate(12deg);
-  animation: sweep 5.5s ease-in-out infinite;
+.necklace-stage:hover img {
+  filter:
+    saturate(1.08)
+    contrast(1.05)
+    drop-shadow(0 28px 38px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 32px rgba(214, 168, 80, 0.24));
 }
 
 .craft-grid {
@@ -1551,12 +1678,20 @@ textarea::placeholder {
     font-size: clamp(3.7rem, 5.3vw, 4.45rem);
   }
 
-  .hero-media img {
+  .hero-slide img {
     object-position: center;
   }
 
   .gem-orbit {
     min-height: 330px;
+  }
+
+  .vault-jewel-stage {
+    min-height: 360px;
+  }
+
+  .vault-jewel-stage img {
+    max-height: 330px;
   }
 
   .section,
@@ -1638,6 +1773,72 @@ textarea::placeholder {
 @media (max-width: 619px) {
   .hero-content {
     max-width: min(354px, 100%);
+  }
+
+  .hero-slide img {
+    object-position: 68% center;
+  }
+
+  .hero-slide:nth-child(2) img {
+    padding: 116px 12px 260px 18px;
+    object-position: center;
+  }
+
+  .hero-slide:nth-child(4) img,
+  .hero-slide:nth-child(5) img {
+    object-position: 78% center;
+  }
+
+  .hero-carousel {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    padding-left: 12px;
+  }
+
+  .hero-dots {
+    gap: 2px;
+  }
+
+  .hero-dots button {
+    width: 30px;
+    height: 32px;
+  }
+
+  .signature-section {
+    min-height: auto;
+    gap: 22px;
+    padding: 38px 16px 74px;
+  }
+
+  .signature-copy h2 {
+    font-size: 2.18rem;
+  }
+
+  .necklace-stage {
+    min-height: 300px;
+  }
+
+  .necklace-stage img {
+    width: min(86%, 460px);
+    max-height: 225px;
+  }
+
+  .vault-jewel-stage {
+    min-height: 248px;
+  }
+
+  .vault-jewel-stage img {
+    width: min(96%, 430px);
+    max-height: 226px;
+  }
+
+  .reveal.motion-left {
+    transform: translateX(-18px);
+  }
+
+  .reveal.motion-right {
+    transform: translateX(18px);
   }
 
   .hero-stats {
@@ -1793,21 +1994,12 @@ textarea::placeholder {
   }
 }
 
-@keyframes necklaceFloat {
-  0%, 100% {
-    transform: rotate(45deg) translateY(0);
+@keyframes imageSweep {
+  0%, 36% {
+    transform: translateX(-72%) skewX(-10deg);
   }
-  50% {
-    transform: rotate(45deg) translateY(10px);
-  }
-}
-
-@keyframes pendantGlow {
-  0%, 100% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.24);
+  72%, 100% {
+    transform: translateX(72%) skewX(-10deg);
   }
 }
 
